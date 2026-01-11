@@ -1,0 +1,30 @@
+I want to build a "Step Tracker Betting App" for my brother and me. 
+We use a Google Sheet as our database and want to deploy the frontend to Vercel.
+
+### TECH STACK:
+- Framework: Next.js (App Router)
+- Styling: Tailwind CSS
+- Charts: Recharts
+- Database: Google Sheets (via 'google-spreadsheet' or 'googleapis' npm package)
+- Authentication: Auth.js (NextAuth) using the Google Provider
+
+### CORE FEATURES:
+1. Simple Login: Only two specific email addresses [INSERT EMAILS HERE] should be allowed to sign in. Redirect all others.
+2. Input Screen: A simple form where a logged-in user can select a Date and enter their daily step count. This should append or update a row in the "MasterData" tab of our Google Sheet.
+3. Dashboard: 
+   - A Line Chart showing step trends for both of us.
+   - A "Stats" card showing "Total Steps This Month," "Current Leader," and "Days Won" for each person.
+   - Ability to toggle views: "Last 7 Days," "Current Month," and "Yearly View."
+4. Mobile First: The UI must be optimized for mobile since we check this on our phones.
+
+### DATA STRUCTURE:
+The app will connect to a Google Sheet with a tab named 'MasterData'. 
+Columns: Date (YYYY-MM-DD), AaronSteps (Number), AndrewSteps (Number). 
+Note: There is significant historical data from 2017-2024 that I will be migrating into this sheet. The app should be able to fetch and parse this large dataset efficiently using Next.js Server Components.
+
+### STEPS FOR YOU:
+1. Provide the code for the NextAuth configuration with the email whitelist.
+2. Provide a 'lib/googleSheets.js' utility to handle fetching and writing data.
+3. Create a Dashboard page using Recharts to visualize the 'MasterData'.
+4. Create the Input form component.
+5. Explain which Environment Variables I need to set up in Vercel (Service Account JSON, Sheet ID, etc).
