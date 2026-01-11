@@ -90,7 +90,7 @@ async function migrate() {
     }).filter((r: any) => r !== null);
 
     // Sort by date just in case
-    formattedRows.sort((a, b) => a.Date.localeCompare(b.Date));
+    formattedRows.sort((a: any, b: any) => a.Date.localeCompare(b.Date));
 
     // Batch insert to avoid rate limits and for speed
     const BATCH_SIZE = 500;
