@@ -24,7 +24,7 @@ export const {
             const isAllowed = ALLOWED_EMAILS.includes(user.email.toLowerCase());
             return isAllowed;
         },
-        async session({ session, token }) {
+        async session({ session }) {
             return session;
         },
     },
@@ -32,6 +32,6 @@ export const {
         signIn: "/auth/signin",
         error: "/auth/error",
     },
-    debug: true,
+    secret: process.env.AUTH_SECRET,
     trustHost: true,
 });
