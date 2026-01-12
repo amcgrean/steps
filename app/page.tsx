@@ -21,7 +21,7 @@ export default async function Home() {
                     </div>
                 </div>
 
-                <form action={async () => { "use server"; await signOut(); }}>
+                <form action={async () => { "use server"; await signOut({ redirectTo: "/auth/signin" }); }}>
                     <button className="p-2 text-slate-400 hover:text-red-500 transition-colors">
                         <LogOut className="w-5 h-5" />
                     </button>
